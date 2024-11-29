@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owo.Core", "Owo.Core\Owo.Core.csproj", "{2DF381DB-6978-47F8-8FA0-708598C21188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owo.Api", "Owo.Api\Owo.Api.csproj", "{51F2898F-7274-4A42-AA75-E14B9F290D69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DF381DB-6978-47F8-8FA0-708598C21188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF381DB-6978-47F8-8FA0-708598C21188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF381DB-6978-47F8-8FA0-708598C21188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF381DB-6978-47F8-8FA0-708598C21188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F2898F-7274-4A42-AA75-E14B9F290D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F2898F-7274-4A42-AA75-E14B9F290D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F2898F-7274-4A42-AA75-E14B9F290D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F2898F-7274-4A42-AA75-E14B9F290D69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
