@@ -154,6 +154,7 @@ C:\Owo\owo.api\obj\Debug\net8.0\Owo.Api.AssemblyInfo.cs
 C:\Owo\owo.api\obj\Debug\net8.0\Owo.Api.csproj.CoreCompileInputs.cache
 C:\Owo\owo.api\obj\Debug\net8.0\Owo.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Owo\owo.api\obj\Debug\net8.0\Owo.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Owo\owo.api\obj\Debug\net8.0\Owo.Api.sourcelink.json
 C:\Owo\owo.api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Owo\owo.api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Owo\owo.api\obj\Debug\net8.0\staticwebassets\msbuild.Owo.Api.Microsoft.AspNetCore.StaticWebAssets.props
