@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Owo.Api.Data;
+using Owo.Core.Common.Extensions;
 using Owo.Core.Handlers;
 using Owo.Core.Models;
 using Owo.Core.Requests.Transactions;
@@ -17,30 +18,32 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
             {
                 UserId = request.UserId,
                 Title = request.Title,
+                CreatedAt = DateTime.Now,
                 PaidOrReceivedAt = request.PaidOrReceivedAt,
                 Type = request.Type,
                 Amount = request.Amount,
                 CategoryId = request.CategoryId
             };
-            
+
             await context.Transactions.AddAsync(transaction);
             await context.SaveChangesAsync();
-            
-            return new Response<Transaction?>(transaction, 201, "Transação efetuada com sucesso!");
+
+            return new Response<Transaction?>(transaction, 201, "Transação criada com sucesso!");
         }
         catch
         {
-            return new Response<Transaction?>(null, 500, "Não foi possível efetuar a transação");
+            return new Response<Transaction?>(null, 500, "Não foi possível criar sua transação");
         }
     }
-    
+
     public async Task<Response<Transaction?>> UpdateAsync(UpdateTransactionRequest request)
     {
         try
         {
             var transaction = await context
                 .Transactions
-                .FirstOrDefaultAsync(x => x.Id == request.Id && x.UserId == request.UserId && x.CategoryId == request.CategoryId);
+                .FirstOrDefaultAsync(x =>
+                    x.Id == request.Id && x.UserId == request.UserId && x.CategoryId == request.CategoryId);
 
             if (transaction is null)
                 return new Response<Transaction?>(null, 404, "Transação não encontrada");
@@ -54,11 +57,11 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
             context.Transactions.Update(transaction);
             await context.SaveChangesAsync();
 
-            return new Response<Transaction?>(transaction, message: "Transação atualizada com sucesso!");
+            return new Response<Transaction?>(transaction);
         }
         catch
         {
-            return new Response<Transaction?>(null, 500, "Não foi possível alterar a transação");
+            return new Response<Transaction?>(null, 500, "Não foi possível recuperar sua transação");
         }
     }
 
@@ -72,11 +75,11 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
 
             if (transaction == null)
                 return new Response<Transaction?>(null, 404, "Transação não encontrada");
-            
+
             context.Transactions.Remove(transaction);
             await context.SaveChangesAsync();
-            
-            return new Response<Transaction?>(transaction, message:"Transação deletada com sucesso!");
+
+            return new Response<Transaction?>(transaction, message: "Transação deletada com sucesso!");
         }
         catch
         {
@@ -103,28 +106,46 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
         }
     }
 
-    public async Task<PagedResponse<List<Transaction>>> GetByPeriodAsync(GetTransactionsByPeriodRequest request)
+    public async Task<PagedResponse<List<Transaction>?>> GetByPeriodAsync(GetTransactionsByPeriodRequest request)
     {
+        try
+        {
+            request.StartDate ??= DateTime.Now.GetFirstDay();
+            request.EndDate ??= DateTime.Now.GetLasttDay();
+        }
+        catch
+        {
+            return new PagedResponse<List<Transaction>?>(null, 500,
+                "Não foi possível determinar a data de início ou término");
+        }
+
         try
         {
             var query = context
                 .Transactions
                 .AsNoTracking()
-                .Where(x => x.UserId == request.UserId && x.CreatedAt >= request.StartDate && x.CreatedAt <= request.EndDate)
+                .Where(x =>
+                    x.CreatedAt >= request.StartDate &&
+                    x.CreatedAt <= request.EndDate &&
+                    x.UserId == request.UserId)
                 .OrderBy(x => x.CreatedAt);
-            
+
             var transactions = await query
-                .Skip((request.PageNumber - 1 ) * request.PageSize)
+                .Skip((request.PageNumber - 1) * request.PageSize)
                 .Take(request.PageSize)
                 .ToListAsync();
-            
+
             var count = await query.CountAsync();
-            
-            return new PagedResponse<List<Transaction>>(transactions, count, request.PageNumber, request.PageSize);
+
+            return new PagedResponse<List<Transaction>?>(
+                transactions,
+                count,
+                request.PageNumber,
+                request.PageSize);
         }
         catch
         {
-            return new PagedResponse<List<Transaction>>(null, 500, "Não foi possível consultar as transações");
+            return new PagedResponse<List<Transaction>?>(null, 500, "Não foi possível obter as transações");
         }
     }
 }

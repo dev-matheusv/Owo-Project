@@ -20,6 +20,7 @@ public class CreateTransactionEndpoint : IEndpoint
         ITransactionHandler handler,
         CreateTransactionRequest request)
     {
+        request.UserId = "teste@devmatheus";
         var result  = await handler.CreateAsync(request);
         return result.IsSuccess 
             ? TypedResults.Created($"/{result.Data?.Id}", result.Data) 

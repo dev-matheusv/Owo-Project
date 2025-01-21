@@ -26,6 +26,9 @@ builder.Services.AddSwaggerGen(x => { x.CustomSchemaIds(type => type.FullName); 
 builder
     .Services
     .AddTransient<ICategoryHandler, CategoryHandler>();
+builder
+    .Services
+    .AddTransient<ITransactionHandler, TransactionHandler>();
 
 // Injeção de dependência
 

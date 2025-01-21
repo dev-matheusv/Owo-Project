@@ -20,23 +20,23 @@ public class GetTransactionsByPeriodEndpoint : IEndpoint
 
     private static async Task<IResult> HandleAsync(
         ITransactionHandler handler,
-        DateTime startDate,
-        DateTime endDate,
-        [FromQuery]int pageNumber = Configuration.DefaultPageNumber,
-        [FromQuery]int pageSize = Configuration.DefaultPageSize)
+        [FromQuery] DateTime? startDate = null,
+        [FromQuery] DateTime? endDate = null,
+        [FromQuery] int pageNumber = Configuration.DefaultPageNumber,
+        [FromQuery] int pageSize = Configuration.DefaultPageSize)
     {
         var request = new GetTransactionsByPeriodRequest
         {
             UserId = "teste@devmatheus",
-            StartDate = startDate,
-            EndDate = endDate,
             PageNumber = pageNumber,
-            PageSize = pageSize
+            PageSize = pageSize,
+            StartDate = startDate,
+            EndDate = endDate
         };
         
         var result  = await handler.GetByPeriodAsync(request);
         return result.IsSuccess 
-            ? TypedResults.Ok(result.Data) 
-            : TypedResults.BadRequest(result.Data);
+            ? TypedResults.Ok(result) 
+            : TypedResults.BadRequest(result);
     }
 }

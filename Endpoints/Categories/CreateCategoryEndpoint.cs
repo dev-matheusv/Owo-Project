@@ -20,6 +20,7 @@ public class CreateCategoryEndpoint : IEndpoint
          ICategoryHandler handler,
          CreateCategoryRequest request)
      {
+         
          var result  = await handler.CreateAsync(request);
          return result.IsSuccess 
              ? TypedResults.Created($"/{result.Data?.Id}", result.Data) 

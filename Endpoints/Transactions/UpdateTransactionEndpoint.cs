@@ -19,12 +19,10 @@ public class UpdateTransactionEndpoint : IEndpoint
     private static async Task<IResult> HandleAsync(
         ITransactionHandler handler,
         UpdateTransactionRequest request,
-        long id,
-        long categoryId)
+        long id)
     {
         request.UserId = "teste@devmatheus";
         request.Id = id;
-        request.CategoryId = categoryId;
         
         var result  = await handler.UpdateAsync(request);
         return result.IsSuccess 
