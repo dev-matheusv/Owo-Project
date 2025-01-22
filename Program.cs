@@ -1,8 +1,10 @@
 using System.Diagnostics.Eventing.Reader;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Owo.Api.Data;
 using Owo.Api.Endpoints;
 using Owo.Api.Handlers;
+using Owo.Api.Models;
 using Owo.Core.Handlers;
 using Owo.Core.Models;
 using Owo.Core.Requests.Categories;
@@ -16,13 +18,21 @@ var cnnStr = builder.Configuration.GetConnectionString("DefaultConnection") ?? S
 builder
     .Services
     .AddDbContext<AppDbContext>(
-        x =>
-        {
-            x.UseSqlServer(cnnStr);
-        });
+        x => { x.UseSqlServer(cnnStr); });
+builder.Services
+    .AddIdentityCore<User>()
+    .AddRoles<IdentityRole<long>>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddApiEndpoints();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(x => { x.CustomSchemaIds(type => type.FullName); });
+
+builder.Services
+    .AddAuthentication(IdentityConstants.ApplicationScheme)
+    .AddIdentityCookies();
+builder.Services.AddAuthorization();
+
 builder
     .Services
     .AddTransient<ICategoryHandler, CategoryHandler>();
@@ -33,6 +43,9 @@ builder
 // Injeção de dependência
 
 var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseSwagger();
 app.UseSwaggerUI();

@@ -8,6 +8,9 @@ C:\Owo\owo.api\bin\Debug\net8.0\Owo.Api.pdb
 C:\Owo\owo.api\bin\Debug\net8.0\Azure.Core.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Azure.Identity.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Humanizer.dll
+C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -28,6 +31,8 @@ C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Owo\owo.api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
