@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Owo.Api.Common.Api;
 using Owo.Core.Handlers;
 using Owo.Core.Models;
@@ -17,11 +18,12 @@ public class UpdateTransactionEndpoint : IEndpoint
             .Produces<Response<Transaction?>>();
 
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ITransactionHandler handler,
         UpdateTransactionRequest request,
         long id)
     {
-        request.UserId = "teste@devmatheus";
+        request.UserId = user.Identity?.Name ?? string.Empty;
         request.Id = id;
         
         var result  = await handler.UpdateAsync(request);

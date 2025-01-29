@@ -1,6 +1,8 @@
+using System.Security.Claims;
 using Owo.Api.Common.Api;
 using Owo.Core.Handlers;
 using Owo.Core.Models;
+using Owo.Core.Requests;
 using Owo.Core.Requests.Categories;
 using Owo.Core.Responses;
 
@@ -17,10 +19,11 @@ public class CreateCategoryEndpoint : IEndpoint
              .Produces<Response<Category?>>();
  
      private static async Task<IResult> HandleAsync(
+         ClaimsPrincipal user,
          ICategoryHandler handler,
          CreateCategoryRequest request)
      {
-         
+         request.UserId = user.Identity?.Name ?? string.Empty;
          var result  = await handler.CreateAsync(request);
          return result.IsSuccess 
              ? TypedResults.Created($"/{result.Data?.Id}", result.Data) 

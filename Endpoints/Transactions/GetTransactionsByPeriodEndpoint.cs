@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Owo.Api.Common.Api;
 using Owo.Core;
@@ -19,6 +20,7 @@ public class GetTransactionsByPeriodEndpoint : IEndpoint
             .Produces<PagedResponse<List<Transaction>?>>();
 
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ITransactionHandler handler,
         [FromQuery] DateTime? startDate = null,
         [FromQuery] DateTime? endDate = null,
@@ -27,7 +29,7 @@ public class GetTransactionsByPeriodEndpoint : IEndpoint
     {
         var request = new GetTransactionsByPeriodRequest
         {
-            UserId = "teste@devmatheus",
+            UserId = user.Identity?.Name ?? string.Empty,
             PageNumber = pageNumber,
             PageSize = pageSize,
             StartDate = startDate,

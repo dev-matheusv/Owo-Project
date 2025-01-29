@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Owo.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8adbbfdd9f488352a64b2c51a31bcb3afbfc2aa1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2dca55d9055a78a31d2bf4e778e2ac07e415ea9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Owo.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Owo.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

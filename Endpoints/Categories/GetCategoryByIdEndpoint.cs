@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Owo.Api.Common.Api;
 using Owo.Core.Handlers;
 using Owo.Core.Models;
@@ -17,12 +18,13 @@ public class GetCategoryByIdEndpoint : IEndpoint
             .Produces<Response<Category?>>();
 
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ICategoryHandler handler,
         long id)
     {
         var request = new GetCategoryByIdRequest
         {
-            UserId = "teste@devmatheus",
+            UserId = user.Identity?.Name ?? string.Empty,
             Id = id
         };
         

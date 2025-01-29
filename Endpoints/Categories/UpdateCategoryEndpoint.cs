@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Owo.Api.Common.Api;
 using Owo.Core.Handlers;
 using Owo.Core.Models;
@@ -17,11 +18,12 @@ public class UpdateCategoryEndpoint : IEndpoint
             .Produces<Response<Category?>>();
 
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ICategoryHandler handler,
         UpdateCategoryRequest request,
         long id)
     {
-        request.UserId = "teste@devmatheus";
+        request.UserId = user.Identity?.Name ?? string.Empty;
         request.Id = id;
         
         var result  = await handler.UpdateAsync(request);

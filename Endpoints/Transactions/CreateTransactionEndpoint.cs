@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Owo.Api.Common.Api;
 using Owo.Core.Handlers;
 using Owo.Core.Models;
@@ -17,10 +18,11 @@ public class CreateTransactionEndpoint : IEndpoint
             .Produces<Response<Transaction?>>();
  
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ITransactionHandler handler,
         CreateTransactionRequest request)
     {
-        request.UserId = "teste@devmatheus";
+        request.UserId = user.Identity?.Name ?? string.Empty;
         var result  = await handler.CreateAsync(request);
         return result.IsSuccess 
             ? TypedResults.Created($"/{result.Data?.Id}", result.Data) 
