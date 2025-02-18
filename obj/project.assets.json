@@ -5320,11 +5320,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Owo\\Owo.Api\\Owo.Api.csproj",
+      "projectUniqueName": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\Owo.Api.csproj",
       "projectName": "Owo.Api",
-      "projectPath": "C:\\Owo\\Owo.Api\\Owo.Api.csproj",
+      "projectPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\Owo.Api.csproj",
       "packagesPath": "C:\\Users\\devma\\.nuget\\packages\\",
-      "outputPath": "C:\\Owo\\Owo.Api\\obj\\",
+      "outputPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5346,8 +5346,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Owo\\Owo.Core\\Owo.Core.csproj": {
-              "projectPath": "C:\\Owo\\Owo.Core\\Owo.Core.csproj"
+            "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\Owo.Core.csproj": {
+              "projectPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\Owo.Core.csproj"
             }
           }
         }

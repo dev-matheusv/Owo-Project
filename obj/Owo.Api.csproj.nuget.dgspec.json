@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Owo\\owo.api\\Owo.Api.csproj": {}
+    "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\Owo.Api.csproj": {}
   },
   "projects": {
-    "C:\\Owo\\owo.api\\Owo.Api.csproj": {
+    "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\Owo.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Owo\\owo.api\\Owo.Api.csproj",
+        "projectUniqueName": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\Owo.Api.csproj",
         "projectName": "Owo.Api",
-        "projectPath": "C:\\Owo\\owo.api\\Owo.Api.csproj",
+        "projectPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\Owo.Api.csproj",
         "packagesPath": "C:\\Users\\devma\\.nuget\\packages\\",
-        "outputPath": "C:\\Owo\\owo.api\\obj\\",
+        "outputPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Owo\\Owo.Core\\Owo.Core.csproj": {
-                "projectPath": "C:\\Owo\\Owo.Core\\Owo.Core.csproj"
+              "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\Owo.Core.csproj": {
+                "projectPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\Owo.Core.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "C:\\Owo\\Owo.Core\\Owo.Core.csproj": {
+    "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\Owo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Owo\\Owo.Core\\Owo.Core.csproj",
+        "projectUniqueName": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\Owo.Core.csproj",
         "projectName": "Owo.Core",
-        "projectPath": "C:\\Owo\\Owo.Core\\Owo.Core.csproj",
+        "projectPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\Owo.Core.csproj",
         "packagesPath": "C:\\Users\\devma\\.nuget\\packages\\",
-        "outputPath": "C:\\Owo\\Owo.Core\\obj\\",
+        "outputPath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

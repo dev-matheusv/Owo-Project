@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r6La2E/RElE=",
+  "dgSpecHash": "5Qw6lnIjkM0=",
   "success": true,
-  "projectFilePath": "C:\\Owo\\owo.api\\Owo.Api.csproj",
+  "projectFilePath": "C:\\Owo\\Repository\\Owo-Project\\Owo\\Owo.Api\\Owo.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devma\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\devma\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
