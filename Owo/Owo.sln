@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owo.Core", "Owo.Core\Owo.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owo.Api", "Owo.Api\Owo.Api.csproj", "{51F2898F-7274-4A42-AA75-E14B9F290D69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owo.App", "Owo.App\Owo.App.csproj", "{C05E62C9-27C0-46EC-9F88-0BA20240933D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{51F2898F-7274-4A42-AA75-E14B9F290D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51F2898F-7274-4A42-AA75-E14B9F290D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51F2898F-7274-4A42-AA75-E14B9F290D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C05E62C9-27C0-46EC-9F88-0BA20240933D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05E62C9-27C0-46EC-9F88-0BA20240933D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05E62C9-27C0-46EC-9F88-0BA20240933D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05E62C9-27C0-46EC-9F88-0BA20240933D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
